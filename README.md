@@ -10,7 +10,7 @@
 ```
 git add --all 
 git commit -m "처음 저장소에 올림"
-git branch -M main
+git branch -M naster
 git remote add origin https://github.com/dusrbpoiiij/WEB-boiler_plate.git
-git push -u origin main
+git push -u origin master
 ```
