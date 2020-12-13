@@ -7,7 +7,6 @@ const { User } = require('./models/User');
 
 
 const app = express()
-const port = 5000
 
 // application/x-www-form-urlencoded 
 app.use(bodyParser.urlencoded({extended: true}));
@@ -32,6 +31,10 @@ app.get('/', (req, res) => {
   res.send('Hello World!~~~안녕하세요')
 })
 
+
+app.get('/api/hello', (req, res) => {
+  res.send('Hello my friend!')
+})
 
 //TODO: 회원 가입 할 때 필요한 정보들을 Client에서 가져오면 데이터 베이스에 넣어준다. 
 app.post('/api/users/register', (req, res) => {
@@ -101,6 +104,7 @@ app.get('/api/users/logout', auth, (req, res) => {
   })
 })
 
+const port = 5000
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
