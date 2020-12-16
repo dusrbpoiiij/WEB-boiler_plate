@@ -40,7 +40,7 @@ app.get('/api/hello', (req, res) => {
 app.post('/api/users/register', (req, res) => {
   const user = new User(req.body);
   user.save((err, userInfo) => {
-    if(err) return res.json({ success: false, err})
+    if(err) return res.json({ success: false, message: "동일한 이메일을 가진 유저가 존재합니다."})
     return res.status(200).json({
       success: true
     })
